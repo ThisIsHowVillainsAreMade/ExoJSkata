@@ -263,6 +263,20 @@ devMalbolge();
 
 // CODE ICI
 
+const devMalbolgeString = (string) => {
+  const lesStringsEnTableau = [
+    "string 1",
+    "striing 2",
+    "striiing 3",
+    "striiiing 4",
+  ];
+  let lesStringsEnTableauMap = lesStringsEnTableau.map((element) => {
+    return element.length;
+  });
+  console.log("Exercice 12 " + lesStringsEnTableauMap);
+};
+
+devMalbolgeString();
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 13
@@ -278,6 +292,20 @@ devMalbolge();
 
 // CODE ICI
 
+const leMechant = (array, string) => {
+  const cEstLui = [
+    "Le méchannnnt",
+    "Le méchaaaant",
+    "Oui, c'est lui, c'est le méchaaaant",
+  ];
+  const cEstLeMechant = cEstLui.map((element) => {
+    return element.charAt(0);
+  });
+  console.log("Exercice 13 " + cEstLeMechant);
+};
+
+leMechant();
+
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 14
@@ -288,6 +316,21 @@ devMalbolge();
 
 // CODE ICI
 
+const floLaFonction = (array, string) => {
+  const rianDetruitLePattern = [
+    "rian",
+    "rip clyde",
+    "c'est la faute de greg",
+    "océane est insupportable",
+  ];
+  const ryan = rianDetruitLePattern.map((element) => {
+    return element.charAt(element.length - 1);
+  });
+  console.log("Exercice 14 " + ryan);
+};
+
+floLaFonction();
+
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 15
@@ -297,6 +340,16 @@ devMalbolge();
 // Pour cette exercice on va utiliser la méthode filter() qui permet de filtrer un tableau, hésitez pas à regarder l'exercice 8 pour voir comment ça fonctionne. Sauf qu'ici on va filtrer en fonction de la longueur de la string. Incice : la méthode length() permet de récupérer la longueur d'une string.
 
 // CODE ICI
+
+const alexLeChat = (array, string) => {
+  const sashakaya = ["miaou", "roar", "miou", "MAAAAAAAAOOOOOOOOWWWWWWW"];
+  const alexMiaou = sashakaya.filter((element) => {
+    return element.length >= sashakaya.length;
+  });
+  console.log(alexMiaou);
+};
+
+alexLeChat();
 
 //----------------------------------------------------------------------------------------------//
 
