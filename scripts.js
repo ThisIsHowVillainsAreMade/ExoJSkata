@@ -240,6 +240,15 @@ florian();
 
 // CODE ICI
 
+const devMalbolge = (array) => {
+  const devMalbolgeArray = [1, 2, 3, 4];
+  const devMalbolgeAddition = devMalbolgeArray.map((element) => {
+    return element + 1;
+  });
+  console.log("Exercice 11 " + devMalbolgeAddition);
+};
+devMalbolge();
+
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 12
