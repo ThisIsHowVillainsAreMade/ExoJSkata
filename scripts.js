@@ -346,7 +346,7 @@ const alexLeChat = (array, string) => {
   const alexMiaou = sashakaya.filter((element) => {
     return element.length >= sashakaya.length;
   });
-  console.log(alexMiaou);
+  console.log("Exercice 15 " + alexMiaou);
 };
 
 alexLeChat();
@@ -365,6 +365,15 @@ alexLeChat();
 
 // CODE ICI
 
+const lesCanards = (array, parseint) => {
+  const coinCoin = [1, 2, 3, 4, 5, 6, 7];
+  const miniCoin = coinCoin.reduce((array, parseint) => {
+    return array + parseint;
+  }, 0);
+  console.log("Exercice 16 " + miniCoin);
+};
+lesCanards();
+
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 17
@@ -379,6 +388,13 @@ alexLeChat();
 
 // CODE ICI
 
+const gregEtRian = (array, string) => {
+  const gregLeTableau = ["Ouais ", "C'est ", "Greg ", "qui ", "chante: "];
+  const rianLeTableau = ["C'est ", "l'Hymne ", "de ", "nos ", "campagnes !"];
+  const mariageGregEtRian = gregLeTableau.concat(rianLeTableau);
+  console.log("Exercice 17 " + mariageGregEtRian);
+};
+gregEtRian();
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 18
@@ -388,6 +404,15 @@ alexLeChat();
 // Pour cette exercice on va utiliser la méthode filter() qui permet de filtrer un tableau, hésitez pas à regarder l'exercice 8 pour voir comment ça fonctionne. Sauf qu'ici on va filtrer en fonction de la présence de la lettre "e". Indice : la méthode includes() permet de savoir si une string contient une lettre ou un mot.
 
 // CODE ICI
+
+const floAvecLaLettreE = (array, string) => {
+  const floEnEaDefautDetreEnIouEnY = ["Tempete", "Chien", "Mouton"];
+  const floFiltre = floEnEaDefautDetreEnIouEnY.filter((element) => {
+    return element.includes("e") || element.includes("E");
+  });
+  console.log("Exercice 18 " + floFiltre);
+};
+floAvecLaLettreE();
 
 //----------------------------------------------------------------------------------------------//
 
@@ -609,3 +634,72 @@ alexLeChat();
 // }
 
 // console.log(sortString(["Banana", "Orange", "Apple", "Mango"]))
+
+// EXERCICE 26
+// Écris une fonction qui étant donné deux angles d'un triangle renvoie la mesure du troisième angle.
+// ( Rappel : la somme des trois angles d'un triangle est toujours égale à 180 degrés )
+// Exemple :
+// otherAngle(30, 60) // 90
+// otherAngle(60, 60) // 60
+// Indice : Pour trouver le troisième angle, tu dois soustraire la somme des deux angles donnés à 180 degrés.
+
+// CODE ICI
+
+//----------------------------------------------------------------------------------------------//
+
+// EXERCICE 27
+// Écris une fonction qui peut déterminer si une année est une année bissextile ou non. Elle doit renvoyer true si c'est le cas, sinon false.
+// ( Rappel : Une année bissextile est une année contenant 366 jours au lieu de 365. Elle est donc plus longue qu'une année normale. Une année bissextile a lieu tous les 4 ans. )
+// Exemple :
+// isLeapYear(2020) // true
+// isLeapYear(2021) // false
+// Indice : Pour savoir ça tu peux utiliser le modulo. Si une année est divisible par 4 et que le reste de la division est égal à 0, alors c'est une année bissextile.
+
+// CODE ICI
+
+//----------------------------------------------------------------------------------------------//
+
+// EXERCICE 28
+
+// Voici un example de tableau d'animaux. Écris une fonction qui à partir d'un tableau similaire reçu en paramètre renvoie un nouveau tableau qui lui même contient deux sous-tableaux. Le premier sous-tableau doit contenir les animaux domestiques et le second les animaux sauvages. Les animaux domestiques doivent être triés par ordre alphabétique et les animaux sauvages par ordre alphabétique inversé.
+
+const animals = [
+  { name: "Panda", type: "Wild" },
+  { name: "Cat", type: "Domestic" },
+  { name: "Turtle", type: "Domestic" },
+  { name: "Dog", type: "Domestic" },
+  { name: "Crocodile", type: "Wild" },
+  { name: "Eagle", type: "Wild" },
+  { name: "Donkey", type: "Domestic" },
+  { name: "Pigeon", type: "Domestic" },
+  { name: "Monkey", type: "Wild" },
+];
+
+// Exemple :
+// sortAnimals(animals) // [["Cat", "Dog", "Donkey", "Pigeon", "Turtle"], ["Eagle", "Monkey", "Panda", "Crocodile"]]
+// Indice : Oubliez pas que tu peux créer des variables qui contiennent des tableaux vides et que tu peux ajouter des éléments à un tableau avec la méthode push(). Mais vu que tu dois analyser le tableau d'animaux pour le trier, tu dois utiliser une boucle et faire des conditions if pour savoir si l'animal est domestique ou sauvage. Et tu dois trier les animaux domestiques par ordre alphabétique et les animaux sauvages par ordre alphabétique inversé. Pour trier un tableau par ordre alphabétique tu peux utiliser la méthode sort(). Pour trier un tableau par ordre alphabétique inversé tu peux utiliser la méthode reverse().
+
+// CODE ICI
+
+//-----------------------------------------------SOLUTIONS-----------------------------------------------//
+
+// const sortAnimals = (animals) => {
+//     let tableauDomestic = []
+//     let tableauWild = []
+//     let tableauFinal = []
+//     for (let i = 0; i < animals.length; i++) {
+//         if (animals[i].type === "Domestic") {
+//         tableauDomestic.push(animals[i].name)
+//         } else {
+//         tableauWild.push(animals[i].name)
+//         }
+//     }
+//     tableauDomestic.sort()
+//     tableauWild.sort()
+//     tableauWild.reverse()
+//     tableauFinal.push(tableauDomestic)
+//     tableauFinal.push(tableauWild)
+//     return tableauFinal
+//     }
+
+// console.log(sortAnimals(animals))
