@@ -424,6 +424,17 @@ floAvecLaLettreE();
 
 // CODE ICI
 
+const rianLeTableauDeNombres = (array, parseint) => {
+  const lesChiffresDeRian = [1, 2, 6, 3, 4, 9];
+  const rianQuiTrie = lesChiffresDeRian.filter((element) => {
+    return element % 2 === 0;
+  });
+  const rianRetourne = rianQuiTrie.sort((a, b) => a - b);
+  console.log("Exercice 19 " + rianRetourne);
+};
+
+rianLeTableauDeNombres();
+
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 20
@@ -451,6 +462,17 @@ floAvecLaLettreE();
 // Indice 6 : Pour récupérer le premier élément d'un tableau tu peux utiliser la notation crochet : monTableau[0]
 
 // CODE ICI
+
+const rianception = (phrase) => {
+  let rianEstToujoursUnTableau = phrase.split(" ");
+  let longueurDeRian = rianEstToujoursUnTableau.map((element) => {
+    return element.length;
+  });
+  let rianEnModeTri = longueurDeRian.sort((a, b) => a - b);
+  return rianEnModeTri[0];
+};
+
+console.log(rianception("Ah bah oui !!!"));
 
 //----------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------//
