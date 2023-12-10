@@ -472,7 +472,7 @@ const rianception = (phrase) => {
   return rianEnModeTri[0];
 };
 
-console.log(rianception("Ah bah oui !!!"));
+console.log("Exercice 20 " + rianception("Ah bah oui !!!"));
 
 //----------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------//
@@ -504,6 +504,20 @@ console.log(rianception("Ah bah oui !!!"));
 // Indice : Oubliez pas de transformer les string en tableau pour pouvoir les trier et les comparer. Utilisez la méthode split() pour transformer une string en tableau et la méthode sort() pour trier un tableau. Puis comparez les deux tableaux avec la méthode join() qui permet de transformer un tableau en string.
 
 // CODE ICI
+
+const anagram = (greg1, greg2) => {
+  let ryanAir = greg1.split("");
+  let floryanAir = greg2.split("");
+  let gregTrie = ryanAir.sort();
+  let gregEncoreTrie = floryanAir.sort();
+  if (gregTrie.join("") == gregEncoreTrie.join("")) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+console.log("Exercice 21 " + anagram("ba", "ab"));
 
 //----------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------//
@@ -537,6 +551,15 @@ console.log(rianception("Ah bah oui !!!"));
 // Indice 2 : Pour supprimer un élément d'un tableau vous pouvez utiliser la méthode splice() combiné à une boucle ou la méthode filter() qui permet de filtrer un tableau en fonction d'une condition.
 
 // CODE ICI
+
+const onRetireLesDoublons = (string) => {
+  let motDoublon = string.split("");
+  let tableauAvecDesDoublons = motDoublon.filter((element, i) => {
+    return element !== motDoublon[i + 1];
+  });
+  return tableauAvecDesDoublons.join("");
+};
+console.log(onRetireLesDoublons("Exercice vingt-deux : " + "Hii !"));
 
 //----------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------//
