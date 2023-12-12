@@ -599,6 +599,14 @@ console.log(onRetireLesDoublons("Exercice vingt-deux : " + "Hii !"));
 
 // CODE ICI
 
+const phoneNumber = (array) => {
+  const intNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+  let prefixeNum = intNum.slice(0, 3);
+  let midNum = intNum.slice(3, 6);
+  let endNum = intNum.slice(6, 10);
+  return `${prefixeNum.join("")} — ${midNum.join("")} — ${endNum.join("")}`;
+};
+console.log("Exercice 23 :" + phoneNumber());
 //----------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------//
 //--------------------------------------SOLUTIONS-----------------------------------------------//
@@ -627,6 +635,24 @@ console.log(onRetireLesDoublons("Exercice vingt-deux : " + "Hii !"));
 // Indice 3 : Il y a plus cas comparer les codes unicode des caractères du tableau avec les codes unicode des caractères manquants pour trouver le caractère manquant avec une condition if. Et retourner le caractère manquant avec un return et la méthode fromCharCode().
 
 // CODE ICI
+
+const findMissingLetter = (array) => {
+  let arraygnee = array.map((element) => {
+    return element.charCodeAt();
+  });
+  for (let i = 0; i < arraygnee.length; i++) {
+    if (arraygnee[i] !== arraygnee[i + 1] - 1) {
+      return String.fromCharCode(arraygnee[i] + 1);
+    }
+  }
+};
+
+// ALGO A REVOIR ICI.
+
+console.log(
+  "Exercice 24 — ALGO A REVOIR ICI : " +
+    findMissingLetter(["a", "b", "c", "d", "f"])
+);
 
 //----------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------//
@@ -660,6 +686,22 @@ console.log(onRetireLesDoublons("Exercice vingt-deux : " + "Hii !"));
 
 // CODE ICI
 
+const madameLaFonction = (array, string) => {
+  return array.sort((a, b) => {
+    if (a.toLowerCase() < b.toLowerCase()) {
+      return -1;
+    }
+    if (a.toLowerCase() > b.toLowerCase()) {
+      return 1;
+    }
+    return 0;
+  });
+};
+console.log(
+  "Exercice 25 — ALGO A REVOIR : " +
+    madameLaFonction(["Banana", "Orange", "Apple", "Mango"])
+);
+
 //----------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------//
 //--------------------------------------SOLUTIONS-----------------------------------------------//
@@ -690,6 +732,13 @@ console.log(onRetireLesDoublons("Exercice vingt-deux : " + "Hii !"));
 
 // CODE ICI
 
+function thirdAngle(a, b) {
+  return 180 - a - b;
+}
+console.log("Exercice 26");
+console.log(thirdAngle(90, 30));
+console.log(thirdAngle(20, 80));
+
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 27
@@ -701,6 +750,18 @@ console.log(onRetireLesDoublons("Exercice vingt-deux : " + "Hii !"));
 // Indice : Pour savoir ça tu peux utiliser le modulo. Si une année est divisible par 4 et que le reste de la division est égal à 0, alors c'est une année bissextile.
 
 // CODE ICI
+
+function isLeapYear(year) {
+  if (year % 400 === 0) {
+    return true;
+  } else if (year % 4 === 0 && year % 100 !== 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log("Exercice 27: " + isLeapYear(2020));
 
 //----------------------------------------------------------------------------------------------//
 
@@ -725,6 +786,45 @@ const animals = [
 // Indice : Oubliez pas que tu peux créer des variables qui contiennent des tableaux vides et que tu peux ajouter des éléments à un tableau avec la méthode push(). Mais vu que tu dois analyser le tableau d'animaux pour le trier, tu dois utiliser une boucle et faire des conditions if pour savoir si l'animal est domestique ou sauvage. Et tu dois trier les animaux domestiques par ordre alphabétique et les animaux sauvages par ordre alphabétique inversé. Pour trier un tableau par ordre alphabétique tu peux utiliser la méthode sort(). Pour trier un tableau par ordre alphabétique inversé tu peux utiliser la méthode reverse().
 
 // CODE ICI
+
+console.log("Exercice 28 :");
+
+function triage(animals) {
+  let domestics = animals.filter(function (lookingForAnimalDomestics) {
+    return lookingForAnimalDomestics.type === "Domestic";
+  });
+  let wild = animals.filter(function (lookingForAnimalWild) {
+    return lookingForAnimalWild.type === "Wild";
+  });
+  domestics = domestics.sort((a, b) => a.name.localeCompare(b.name));
+  wild = wild.sort((a, b) => b.name.localeCompare(a.name));
+
+  console.log(wild);
+  console.log(domestics);
+}
+triage(animals);
+
+function triage2(animals) {
+  let domestiques = [];
+  let wilds = [];
+  let final = [];
+  for (let i = 0; i < animals.length; i++) {
+    if (animals[i].type === "Domestic") {
+      domestiques.push(animals[i].name);
+    } else {
+      wilds.push(animals[i].name);
+    }
+  }
+  domestiques.sort();
+  wilds.sort();
+  final.reverse();
+  final.push(domestiques);
+  final.push(wilds);
+  return final;
+}
+triage2(animals);
+
+console.log(triage2(animals));
 
 //-----------------------------------------------SOLUTIONS-----------------------------------------------//
 
@@ -781,8 +881,8 @@ let theatre = () => {
   return place;
 };
 console.log("Exercice 29:");
-console.log(theatre());
-console.log(" ");
+// console.log(theatre());
+// console.log(" ");
 
 //-----------------------------------------------SOLUTIONS-----------------------------------------------//
 
@@ -799,3 +899,74 @@ console.log(" ");
 // }
 
 // console.log(theatreSieges())
+
+//----------------------------------------------------------------------------------------------//
+
+// EXERCICE 30
+
+/*
+Notre équipe de football participe à un tournoi dans lequel elle a joué 10 matchs.
+Les résultats du match sont notés "3:0" : le premier chiffre est le nombre de buts de **notre** équipe ; le second est celui de l'autre équipe.
+Pour connaître le score de notre équipe, nous suivons ces règles :
+- Victoire : 3pts
+- Nul : 1pt
+- Défaite : 0pt
+Étant donné un tableau avec les résultats des matchs, écris une fonction qui renverra notre score.
+Pour exemple, si ta fonction recevait le tableau ci-dessous en paramètre, tu devrais obtenir 13 points.
+["1:0", "2:0", "3:0", "4:4", "2:2", "3:3", "1:4", "2:3", "2:4", "3:3"]
+*/
+//Indice : Tu dois utiliser une boucle for pour parcourir le tableau et une condition if pour savoir si notre équipe a gagné, perdu ou fait match nul. Et tu dois ajouter les points de chaque match à une variable score qui doit être initialisée à 0. Et tu dois retourner la variable score à la fin de la fonction.
+
+// CODE ICI
+
+//-----------------------------------------------SOLUTIONS-----------------------------------------------//
+
+// const footballPoints = (tableau) => {
+//     let score = 0
+//     for (let i = 0; i < tableau.length; i++) {
+//         if (tableau[i][0] > tableau[i][2]) {
+//             score += 3
+//         } else if (tableau[i][0] === tableau[i][2]) {
+//             score += 1
+//         }
+//     }
+//     return score
+// }
+// console.log(footballPoints(["1:0", "2:0", "3:0", "4:4", "2:2", "3:3", "1:4", "2:3", "2:4", "3:3"]))
+
+//----------------------------------------------------------------------------------------------//
+
+// EXERCICE 31
+
+/*
+Écris une fonction avec deux paramètres. Ces paramètres sont des tableaux contenant des nombres **stockés sous forme de chaînes de caractères**.
+Ta fonction doit renvoyer **un** tableau, où chaque élément est la somme des éléments des deux arguments correspondants (c'est-à-dire : le premier élément du tableau résultat est égal au premier élément du premier paramètre plus le premier élément du deuxième paramètre) .
+Remarque : Si un élément est vide, il doit compter pour 0.
+Ex: 
+sumArr( ["1", "2", "3"], ["2", "4", "1"] ) should return ["3", "6", "4"]
+sumArr( ["2", "7", "3"], ["2", "4", "9"] ) should return ["4", "11", "12"]
+sumArr( ["2", "7", "3", "8", "2"], ["2", "4", "9"] ) should return ["4", "11", "12", "8", "2"]
+sumArr( ["2", "5", "3"], ["2", "4", "9", "5", "5"] ) should return ["4", "9", "12", "5", "5"]
+*/
+
+//Indice : Tu dois utiliser une boucle for pour parcourir les tableaux et une condition if pour savoir si un élément est vide. Si un élément est vide tu dois le remplacer par 0. Et tu dois ajouter les éléments des deux tableaux à une variable tableau3 qui doit être initialisée à un tableau vide. Et tu dois retourner le tableau3 à la fin de la fonction.
+
+// CODE ICI
+
+//-----------------------------------------------SOLUTIONS-----------------------------------------------//
+
+// const sumArr = (tableau1, tableau2) => {
+//     let tableau3 = []
+//     for (let i = 0; i < tableau1.length; i++) {
+//         if (tableau1[i] === "") {
+//             tableau1[i] = 0
+//         }
+//         if (tableau2[i] === "") {
+//             tableau2[i] = 0
+//         }
+//         tableau3.push(parseInt(tableau1[i]) + parseInt(tableau2[i]))
+//     }
+//     return tableau3
+// }
+
+// console.log(sumArr(["1", "2", "3"], ["2", "4", "1"]))
