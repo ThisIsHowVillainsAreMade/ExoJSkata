@@ -769,6 +769,21 @@ const animals = [
 
 // CODE ICI
 
+let theatre = () => {
+  let place = [];
+  for (let i = 1; i <= 26; i++) {
+    let row = [];
+    for (let j = 1; j <= 100; j++) {
+      row.push(`${i}-${j}`);
+    }
+    place.push(row);
+  }
+  return place;
+};
+console.log("Exercice 29:");
+console.log(theatre());
+console.log(" ");
+
 //-----------------------------------------------SOLUTIONS-----------------------------------------------//
 
 // const theatreSieges = () => {
