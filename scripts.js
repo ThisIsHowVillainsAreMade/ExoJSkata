@@ -931,7 +931,7 @@ const pointsFootball = (array) => {
   return score;
 };
 console.log(
-  "Exercice 30 : " +
+  "Exercice 30 — ALGO A REVOIR ICI : " +
     pointsFootball([
       "1:0",
       "2:0",
@@ -979,6 +979,26 @@ sumArr( ["2", "5", "3"], ["2", "4", "9", "5", "5"] ) should return ["4", "9", "1
 //Indice : Tu dois utiliser une boucle for pour parcourir les tableaux et une condition if pour savoir si un élément est vide. Si un élément est vide tu dois le remplacer par 0. Et tu dois ajouter les éléments des deux tableaux à une variable tableau3 qui doit être initialisée à un tableau vide. Et tu dois retourner le tableau3 à la fin de la fonction.
 
 // CODE ICI
+
+const sumArr = (array1, array2) => {
+  let array3 = [];
+  let maxLength = Math.max(array1.length, array2.length);
+
+  for (let i = 0; i < maxLength; i++) {
+    let num1 =
+      array1[i] === undefined || array1[i] === "" ? 0 : parseInt(array1[i]);
+    let num2 =
+      array2[i] === undefined || array2[i] === "" ? 0 : parseInt(array2[i]);
+
+    array3.push((num1 + num2).toString());
+  }
+
+  return array3;
+};
+
+console.log(
+  "Exercice 31 : " + sumArr(["2", "7", "3", "8", "2"], ["2", "4", "9"])
+);
 
 //-----------------------------------------------SOLUTIONS-----------------------------------------------//
 
