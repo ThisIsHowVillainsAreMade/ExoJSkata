@@ -1067,6 +1067,23 @@ let tableauClass = [
   "wizard",
 ];
 
+const charGen = () => {
+  let tab1 = [];
+  for (let index = 0; index < tableauName.length; index++) {
+    let tab2 = [];
+    let randomName =
+      tableauName[Math.floor(Math.random() * tableauName.length)];
+    let randomClass =
+      tableauClass[Math.floor(Math.random() * tableauClass.length)];
+    tab2.push(randomName);
+    tab2.push(randomClass);
+    tab1.push(tab2);
+  }
+  return tab1;
+};
+
+console.log("Exercice 32 : " + charGen());
+
 //-----------------------------------------------SOLUTIONS-----------------------------------------------//
 // const generatedCharacter= () => {
 //     let tableau = []
@@ -1116,6 +1133,21 @@ let tableauClass = [
 //Le unicode est une norme informatique qui permet de représenter des caractères de toutes les langues du monde. Chaque caractère possède un code unicode qui lui est propre. Par exemple, le code unicode de "A" est 65, le code unicode de "B" est 66, le code unicode de "C" est 67, etc. Pour récupérer le code unicode d'un caractère vous devez utiliser la méthode charCodeAt(). Cette méthode prend en paramètre l'index du caractère dans la string. Par exemple, si vous voulez récupérer le code unicode du premier caractère de la string vous devez utiliser la méthode charCodeAt(0). Si vous voulez récupérer le code unicode du deuxième caractère de la string vous devez utiliser la méthode charCodeAt(1). Et ainsi de suite.
 
 // CODE ICI
+
+const findMissingLetter2 = (array) => {
+  let arraygnee = array.map((element) => {
+    return element.charCodeAt();
+  });
+  for (let i = 0; i < arraygnee.length; i++) {
+    if (arraygnee[i] !== arraygnee[i + 1] - 1) {
+      return String.fromCharCode(arraygnee[i] + 1);
+    }
+  }
+};
+
+console.log(
+  "Exercice 32 : " + findMissingLetter2(["A", "B", "C", "D", "E", "G"])
+);
 
 //-----------------------------------------------SOLUTIONS-----------------------------------------------//
 
