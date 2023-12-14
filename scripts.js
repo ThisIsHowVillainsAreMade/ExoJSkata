@@ -1146,7 +1146,7 @@ const findMissingLetter2 = (array) => {
 };
 
 console.log(
-  "Exercice 32 : " + findMissingLetter2(["A", "B", "C", "D", "E", "G"])
+  "Exercice 33 : " + findMissingLetter2(["A", "B", "C", "D", "E", "G"])
 );
 
 //-----------------------------------------------SOLUTIONS-----------------------------------------------//
